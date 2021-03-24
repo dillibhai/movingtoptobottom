@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movingtoptobotom</title>
+</head>
+<style>
+.maindiv{
+    height:600px;
+    width: 800px;
+    margin-left: 250px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: red;
+    position: relative;
+}
+#movingdiv{
+    position: absolute;
+    left: 280px;
+    height: 200px;
+    align-items: center;
+    width: 30%;
+    background-color: blue;
+    border-radius: 10px;
+}
+</style>
+<body>
+    <div class="maindiv">
+        <div id="movingdiv">
+
+        </div>
+    </div>
+</body>
+<script>
+    var m =0;
+    var id = setInterval(Animation, 100);
+    function Animation(){
+        m = m +10;
+        if(m==410){
+            clearInterval(id);
+            setTimeout(location.reload(), 100);
+        }else{
+            var target = document.getElementById("movingdiv");
+            target.style.top = m + 'px';
+        }
+    }
+</script>
+</html>
